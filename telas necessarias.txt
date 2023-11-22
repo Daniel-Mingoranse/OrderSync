@@ -1,5 +1,12 @@
-Tela de Login:
+Tela de Login: ****************
 
+Tela de Cadastro:***************
+
+Tela de Erro: ***********
+
+Tela Esqueci minha Senha: ******************
+
+Tela de Carregamento: ************
 Uma tela para inserção de credenciais exclusivas da empresa.
 Tela de Cadastro de Usuários:
 
