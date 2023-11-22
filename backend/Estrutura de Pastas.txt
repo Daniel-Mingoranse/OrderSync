@@ -1,0 +1,15 @@
+/src: Contém o código-fonte principal do seu backend.
+
+/controllers: Armazena controladores que lidam com a lógica de negócios. Cada controlador pode ser responsável por uma entidade ou recurso específico.
+
+/models: Contém os modelos de dados que representam as entidades do seu sistema. Isso pode incluir esquemas para interagir com o banco de dados.
+
+/routes: Define as rotas da API. Separe as rotas por entidades ou recursos, e cada rota pode usar um controlador correspondente.
+
+/middlewares: Onde você pode armazenar middleware personalizado, se necessário.
+
+/config: Pode conter arquivos de configuração, como configurações de banco de dados ou variáveis de ambiente.
+
+server.js: O arquivo principal que inicia o servidor Express e configura as rotas.
+
+package.json: O arquivo de configuração do npm que lista as dependências e scripts do seu projeto.
