@@ -1,0 +1,34 @@
+Operador da Administração (Quem Cadastra os Usuários e Faz Orçamentos):
+Login:
+
+Insere as credenciais e acessa o sistema.
+Cadastro de Usuários:
+
+Seleciona a opção para cadastrar novos usuários.
+Preenche os dados necessários para o cadastro do usuário.
+Orçamento:
+
+Navega até a seção de orçamentos.
+Preenche os campos do formulário para gerar um novo orçamento.
+Submete o orçamento para avaliação.
+Acompanhamento de Pedidos:
+
+Verifica o histórico de pedidos feitos pela empresa.
+Acessa informações detalhadas sobre pedidos específicos.
+Departamento de Compras (Quem Avalia e Processa os Pedidos):
+Login:
+
+Insere as credenciais e acessa o sistema.
+Revisão de Pedidos:
+
+Recebe notificação de novos pedidos para revisão.
+Avalia a disponibilidade de estoque e outros critérios.
+Aceita ou rejeita o pedido.
+Atualização de Status:
+
+Atualiza o status dos pedidos conforme são processados.
+Pode incluir status como "Aprovado", "Em Processamento", "Enviado" etc.
+Operador da Administração (Quem Acompanha os Pedidos):
+Login:
+
+Insere as credenciais e 
