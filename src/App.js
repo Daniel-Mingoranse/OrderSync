@@ -5,23 +5,16 @@ import Box from '@mui/material/Box';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Container from '@mui/material/Container';
-import Card from '@mui/material/Card';
-import CardMedia from '@mui/material/CardMedia';
-import CardContent from '@mui/material/CardContent';
-import CardActions from '@mui/material/CardActions';
 import Stack from '@mui/material/Stack';
 import AssignmentIcon from '@mui/icons-material/Assignment';
-
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Link from '@mui/material/Link';
-import Grid from '@mui/material/Grid';
+
 
 function App() {
   // TODO remove, this demo shouldn't need to reset the theme.
   const defaultTheme = createTheme();
 
-  // Variável cards
-  const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
   // Função Copyright
   function Copyright() {

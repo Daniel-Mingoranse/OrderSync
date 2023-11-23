@@ -1,17 +1,15 @@
-// index.js
-
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import SignInSide from './Login/SignInSide';
 import SignUp from './Register/SignUp';
 import Error from './Error/Error';
-import PasswordReset from './PasswordReset/PasswordReset'
-import Loading from './LoadingPage/Loading'
+import PasswordReset from './PasswordReset/PasswordReset';
+import Loading from './LoadingPage/Loading';
+import { createRoot } from 'react-dom/client';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = createRoot(document.getElementById('root'));
 
 root.render(
   <React.StrictMode>

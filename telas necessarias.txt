@@ -7,7 +7,9 @@ Tela de Erro: ***********
 Tela Esqueci minha Senha: ******************
 
 Tela de Carregamento: ************
+
 Uma tela para inserção de credenciais exclusivas da empresa.
+
 Tela de Cadastro de Usuários:
 
 Uma tela para o operador da administração cadastrar novos usuários.
