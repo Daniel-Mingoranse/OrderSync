@@ -1,0 +1,16 @@
+.app-layout {
+    display: flex;
+  }
+  
+  .sidebar {
+    width: 320px;
+    background-color: #fff;
+    padding-top: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .content {
+    flex: 1;
+    padding: 20px;
+  }
+  

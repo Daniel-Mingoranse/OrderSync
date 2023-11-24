@@ -8,8 +8,8 @@ import SignUp from './Register/SignUp';
 import Error from './Error/Error';
 import PasswordReset from './PasswordReset/PasswordReset';
 import Loading from './LoadingPage/Loading';
-import ClientDashboard from './ClientDashboard/ClientDashboard'
-
+import ClientDashboard from './Dashboard/ClientDashboard/ClientDashboard' // faze de testes logo sera removido esse import
+import RoutesDashboard from './Dashboard/RoutesDashboard';
 
 const root = createRoot(document.getElementById('root'));
 
@@ -17,7 +17,7 @@ root.render(
   <React.StrictMode>
     <Router>
       <Routes>
-        <Route path="/clientdashboard" element={<ClientDashboard />} />
+        <Route path="/dashboard" element={<RoutesDashboard />} />
         <Route path="/loading" element={<Loading />} />
         <Route path="/passwordreset" element={<PasswordReset />} />
         <Route path="/signin" element={<SignInSide />} />
