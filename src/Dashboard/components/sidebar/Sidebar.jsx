@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import './sidebar.scss';
 import SidebarItem from './SidebarItem';
+import { FaHome, FaUser, FaBell, FaCog, FaSignOutAlt, FaChevronLeft   } from 'react-icons/fa';
 
 const sidebarNavItems = [
-  { display: 'Dashboard', icon: 'bx bx-home', to: '/' },
-  { display: 'Perfil', icon: 'bx bx-user', to: '/profile' },
-  { display: 'Notificações', icon: 'bx bx-bell', to: '/notifications' },
-  { display: 'Configurações', icon: 'bx bx-cog', to: '/settings' },
-  { display: 'Sair', icon: 'bx bx-log-out', to: '/logout' },
+  { display: 'Dashboard', icon: <FaHome />, to: '/' }, ,
+  { display: 'Perfil', icon: <FaUser />, to: '/profile' },
+  { display: 'Notificações', icon: <FaBell />, to: '/notifications' },
+  { display: 'Configurações', icon: <FaCog />, to: '/settings' },
+  { display: 'Sair', icon: <FaSignOutAlt />, to: '/logout' },
 ];
 
 const Sidebar = () => {
@@ -19,10 +20,10 @@ const Sidebar = () => {
   const toggleCollapse = () => {
     setIsCollapsed(!isCollapsed);
   };
-    return (
+  return (
     <div className={`sidebar ${isCollapsed ? 'collapsed' : ''}`}>
       <div className="sidebar__logo" onClick={toggleCollapse}>
-        Animate
+        <FaChevronLeft   className='logo'/> 
       </div>
       <div ref={sidebarRef} className="sidebar__menu">
         <div
@@ -37,8 +38,9 @@ const Sidebar = () => {
             key={index}
             to={item.to}
             icon={item.icon}
-            display={item.display}
+            text={item.display}
             active={activeIndex === index}
+            isCollapsed={isCollapsed}
           />
         ))}
       </div>
