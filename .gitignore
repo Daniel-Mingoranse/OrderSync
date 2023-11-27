@@ -1,3 +1,8 @@
+# Ignorar o diretório node_modules
 node_modules/
+
+# Ignorar a pasta .cache dentro de node_modules
 node_modules/.cache
-File node_modules/.cache/default-development
+
+# Ignorar o arquivo específico dentro de .cache
+node_modules/.cache/default-development
