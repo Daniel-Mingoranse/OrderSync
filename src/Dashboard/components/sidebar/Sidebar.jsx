@@ -4,7 +4,7 @@ import SidebarItem from './SidebarItem';
 import { FaHome, FaUser, FaBell, FaCog, FaSignOutAlt, FaChevronLeft   } from 'react-icons/fa';
 
 const sidebarNavItems = [
-  { display: 'Dashboard', icon: <FaHome />, to: '/' }, ,
+  { display: 'Inicio', icon: <FaHome />, to: '/' }, ,
   { display: 'Perfil', icon: <FaUser />, to: '/profile' },
   { display: 'Notificações', icon: <FaBell />, to: '/notifications' },
   { display: 'Configurações', icon: <FaCog />, to: '/settings' },

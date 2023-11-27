@@ -1,0 +1,15 @@
+/* ClientDashboard.css */
+
+.hover-image {
+    width: 100%;
+    height: auto;
+    border-radius: 15px 15px 0 0;
+    transition: filter 0.3s;
+  }
+  
+  .hover-text {
+    color: white;
+  }
+  
+  /* Adicione outros estilos conforme necessário */
+  

@@ -8,8 +8,7 @@ import SignUp from './Register/SignUp';
 import Error from './Error/Error';
 import PasswordReset from './PasswordReset/PasswordReset';
 import Loading from './LoadingPage/Loading';
-import ClientDashboard from './Dashboard/ClientDashboard/ClientDashboard' // faze de testes logo sera removido esse import
-import RoutesDashboard from './Dashboard/RoutesDashboard';
+import RoutesDashboard from './Dashboard/RoutesSideBar/RoutesDashboard';
 
 const root = createRoot(document.getElementById('root'));
 

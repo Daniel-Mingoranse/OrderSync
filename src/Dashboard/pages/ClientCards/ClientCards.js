@@ -1,4 +1,6 @@
-import * as React from 'react';
+// ClientDashboard.jsx
+
+import React from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardActionArea from '@mui/material/CardActionArea';
@@ -6,8 +8,10 @@ import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { styled } from '@mui/system';
-import orcamento from '../../assets/orcamento.jpg'
-import pedido from '../../assets/pedido.jpg'
+import orcamento from '../../../assets/orcamento.jpg';
+import pedido from '../../../assets/pedido.jpg';
+import './ClientCards.css';
+
 const theme = createTheme();
 
 const HoverCard = styled(Card)({
@@ -15,6 +19,7 @@ const HoverCard = styled(Card)({
   margin: 'auto',
   marginBottom: '20px',
   borderRadius: '15px',
+  color:'white',
   background: 'linear-gradient(to left, #1976D2, #20557f)',
   transition: 'transform 0.3s, box-shadow 0.3s',
   position: 'relative',
@@ -30,7 +35,9 @@ const HoverCard = styled(Card)({
     },
   },
   '@media (max-width: 600px)': {
+    width: '90%',
     marginTop: '10px',
+    color: 'white'
   },
 });
 
@@ -57,6 +64,9 @@ const HoverTitle = styled(Typography)({
   marginBottom: '8px',
   fontWeight: 'bold',
   transition: 'font-size 0.3s, font-weight 0.3s',
+  '@media (max-width: 600px)': {
+    fontSize: '1.3rem',
+  },
 });
 
 const HoverContent = styled(CardContent)({
@@ -69,9 +79,8 @@ const HoverContent = styled(CardContent)({
 });
 
 const ClientDashboard = () => {
-    const imageUrlOrçamento = orcamento;
-    const imageUrlNovoPedido = pedido;
-    
+  const imageUrlOrçamento = orcamento;
+  const imageUrlNovoPedido = pedido;
 
   return (
     <ThemeProvider theme={theme}>
@@ -82,7 +91,7 @@ const ClientDashboard = () => {
               <img
                 src={imageUrlOrçamento}
                 alt="Orçamento"
-                style={{ width: '100%', height: 'auto', borderRadius: '15px 15px 0 0', transition: 'filter 0.3s' }}
+                className="hover-image"
               />
               <HoverMessage className="hover-message" variant="body2">
                 Solicitar Orçamento
@@ -92,7 +101,7 @@ const ClientDashboard = () => {
               <HoverTitle gutterBottom variant="h5" component="div">
                 Criar Orçamento
               </HoverTitle>
-              <Typography variant="body1" color="text.secondary" sx={{ color: 'white' }}>
+              <Typography variant="body1" style={{ color: 'white' }} className="hover-text">
                 Gere um novo orçamento para os produtos ou serviços desejados. Adicione detalhes específicos e revise antes de enviar.
               </Typography>
             </HoverContent>
@@ -105,7 +114,7 @@ const ClientDashboard = () => {
               <img
                 src={imageUrlNovoPedido}
                 alt="Novo Pedido"
-                style={{ width: '100%', height: 'auto', borderRadius: '15px 15px 0 0', transition: 'filter 0.3s' }}
+                className="hover-image"
               />
               <HoverMessage className="hover-message" variant="body2">
                 Criar Novo Pedido
@@ -115,7 +124,7 @@ const ClientDashboard = () => {
               <HoverTitle gutterBottom variant="h5" component="div">
                 Fazer Novo Pedido
               </HoverTitle>
-              <Typography variant="body1" color="text.secondary" sx={{ color: 'white' }}>
+              <Typography variant="body1" style={{ color: 'white' }} className="hover-text">
                 Faça um novo pedido com facilidade e rapidez. Escolha os produtos desejados, especifique as quantidades e conclua o processo em alguns passos simples.
               </Typography>
             </HoverContent>
