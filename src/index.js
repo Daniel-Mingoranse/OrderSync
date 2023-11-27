@@ -16,7 +16,7 @@ root.render(
   <React.StrictMode>
     <Router>
       <Routes>
-        <Route path="/dashboard" element={<RoutesDashboard />} />
+        <Route path="/dashboard/*" element={<RoutesDashboard />} />
         <Route path="/loading" element={<Loading />} />
         <Route path="/passwordreset" element={<PasswordReset />} />
         <Route path="/signin" element={<SignInSide />} />

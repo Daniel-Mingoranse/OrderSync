@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import './sidebar.scss';
 import SidebarItem from './SidebarItem';
-import { FaHome, FaUser, FaBell, FaCog, FaSignOutAlt, FaChevronLeft   } from 'react-icons/fa';
+import { FaHome, FaUser, FaTools, FaCog, FaSignOutAlt, FaChevronLeft } from 'react-icons/fa';
+
 
 const sidebarNavItems = [
-  { display: 'Inicio', icon: <FaHome />, to: '/' }, ,
+  { display: 'Inicio', icon: <FaHome />, to: '/' },
   { display: 'Perfil', icon: <FaUser />, to: '/profile' },
-  { display: 'Notificações', icon: <FaBell />, to: '/notifications' },
+  { display: 'Serviços', icon: <FaTools />, to: '/services' },
   { display: 'Configurações', icon: <FaCog />, to: '/settings' },
   { display: 'Sair', icon: <FaSignOutAlt />, to: '/logout' },
 ];
@@ -18,12 +19,12 @@ const Sidebar = () => {
   const indicatorRef = React.useRef();
 
   const toggleCollapse = () => {
-    setIsCollapsed(!isCollapsed);
+    setIsCollapsed((prevIsCollapsed) => !prevIsCollapsed);
   };
   return (
     <div className={`sidebar ${isCollapsed ? 'collapsed' : ''}`}>
       <div className="sidebar__logo" onClick={toggleCollapse}>
-        <FaChevronLeft   className='logo'/> 
+        <FaChevronLeft className='logo' />
       </div>
       <div ref={sidebarRef} className="sidebar__menu">
         <div
@@ -36,7 +37,7 @@ const Sidebar = () => {
         {sidebarNavItems.map((item, index) => (
           <SidebarItem
             key={index}
-            to={item.to}
+            to={`/dashboard${item.to}`}
             icon={item.icon}
             text={item.display}
             active={activeIndex === index}
