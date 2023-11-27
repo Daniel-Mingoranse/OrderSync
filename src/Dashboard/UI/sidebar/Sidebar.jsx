@@ -5,7 +5,7 @@ import { FaHome, FaUser, FaTools, FaCog, FaSignOutAlt, FaChevronLeft } from 'rea
 
 
 const sidebarNavItems = [
-  { display: 'Inicio', icon: <FaHome />, to: '/' },
+  { display: 'Inicio', icon: <FaHome />, to: '/home/' },
   { display: 'Perfil', icon: <FaUser />, to: '/profile' },
   { display: 'Serviços', icon: <FaTools />, to: '/services' },
   { display: 'Configurações', icon: <FaCog />, to: '/settings' },
