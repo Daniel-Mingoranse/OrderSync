@@ -1,4 +1,3 @@
-// ClientDashboard.jsx
 
 import React from 'react';
 import Card from '@mui/material/Card';
@@ -8,9 +7,11 @@ import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { styled } from '@mui/system';
+
 import orcamento from '../../../assets/orcamento.jpg';
 import pedido from '../../../assets/pedido.jpg';
 import './ClientCards.css';
+import { useNavigate } from 'react-router-dom';
 
 const theme = createTheme();
 
@@ -82,11 +83,19 @@ const ClientDashboard = () => {
   const imageUrlOrçamento = orcamento;
   const imageUrlNovoPedido = pedido;
 
+
+  const navigate = useNavigate();
+
+  const handleCardClick = (route) => {
+    navigate(route);
+  };
+
+
   return (
     <ThemeProvider theme={theme}>
       <Grid container justifyContent="center" alignItems="center" style={{ minHeight: '100vh' }}>
         <Grid item xs={12} sm={6} md={4}>
-          <HoverCard>
+        <HoverCard onClick={() => handleCardClick('dashboard/orcamento')}>
             <CardActionArea>
               <img
                 src={imageUrlOrçamento}
@@ -109,7 +118,7 @@ const ClientDashboard = () => {
         </Grid>
 
         <Grid item xs={12} sm={6} md={4}>
-          <HoverCard>
+        <HoverCard onClick={() => handleCardClick('/dashboard/pedidos')}>
             <CardActionArea>
               <img
                 src={imageUrlNovoPedido}

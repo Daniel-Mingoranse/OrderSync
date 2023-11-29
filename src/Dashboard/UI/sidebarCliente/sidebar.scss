@@ -18,7 +18,7 @@
     font-family: 'Mochiy Pop P one', sans-serif;
     color: rgb(39 103 180);
     cursor: pointer;
-    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out; // Adiciona uma transição de cor
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out; 
   }
 
   &.collapsed {
@@ -109,3 +109,15 @@ a {
   color: white;
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; // Adiciona uma transição de cor
 }
+
+.sidebar__logo {
+  touch-action: none;
+}
+
+.sidebar__logo {
+  -webkit-tap-highlight-color: transparent; /* Para navegadores baseados no WebKit, como Chrome e Safari */
+  tap-highlight-color: transparent; /* Para navegadores modernos */
+  touch-action: none;
+  user-select: none;
+}
+

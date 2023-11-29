@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import './sidebar.scss';
-import SidebarItem from './SidebarItem';
+import SidebarItem from './sidebarItem/SidebarItem';
 import { FaHome, FaUser, FaTools, FaCog, FaSignOutAlt, FaChevronLeft } from 'react-icons/fa';
 
 
 const sidebarNavItems = [
-  { display: 'Inicio', icon: <FaHome />, to: '/home/' },
+  { display: 'Inicio', icon: <FaHome />, to: '/' },
   { display: 'Perfil', icon: <FaUser />, to: '/profile' },
   { display: 'Serviços', icon: <FaTools />, to: '/services' },
   { display: 'Configurações', icon: <FaCog />, to: '/settings' },
