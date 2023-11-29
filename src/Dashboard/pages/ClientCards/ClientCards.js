@@ -95,7 +95,7 @@ const ClientDashboard = () => {
     <ThemeProvider theme={theme}>
       <Grid container justifyContent="center" alignItems="center" style={{ minHeight: '100vh' }}>
         <Grid item xs={12} sm={6} md={4}>
-        <HoverCard onClick={() => handleCardClick('dashboard/orcamento')}>
+        <HoverCard onClick={() => handleCardClick('/dashboard/orcamento')}>
             <CardActionArea>
               <img
                 src={imageUrlOrçamento}

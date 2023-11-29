@@ -11,7 +11,8 @@ import Loading from './LoadingPage/Loading';
 import CardDashboard from './Dashboard/pages/ClientCards/ClientCards';
 import AppLayout from './Dashboard/UI/layout/AppDefaultLayout';
 import HomeDashboard from './Dashboard/pages/HomeDashboard/HomeDashboard'
-import BudgetClient from './Dashboard/pages/BudgetClient/BudgetClient'
+import BudgetClient from './Dashboard/pages/ClientCards/BudgetClient/BudgetClient'
+import OrderClient from './Dashboard/pages/ClientCards/OrderClient/OrderClient'
 const root = createRoot(document.getElementById('root'));
 
 root.render(
@@ -32,7 +33,8 @@ root.render(
         <Route path="/dashboard/*" element={<AppLayout />}>
           <Route index element={<HomeDashboard />} />
           <Route path="services" element={<CardDashboard />} />
-          <Route path="pedidos" element={<BudgetClient />} />
+          <Route path="orcamento" element={<BudgetClient />} />
+          <Route path="pedidos" element={<OrderClient />} />
         </Route>
       </Routes>
     </Router>
