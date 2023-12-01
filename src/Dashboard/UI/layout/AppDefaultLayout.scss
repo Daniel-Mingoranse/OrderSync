@@ -17,7 +17,11 @@
   .content {
     flex: 1;
     padding: 20px;
-    margin-left: 20vw; /* Utiliza 20% da largura da tela como margin-left inicial */
+    margin-left: 0vw; /* Utiliza 20% da largura da tela como margin-left inicial */
+
+    @media (max-width: 1440px) {
+      margin-left: 10vw; /* Ajusta a margem para telas menores que 1440 pixels (desktop) */
+    }
   
     @media (max-width: 834px) {
       margin-left: 40vw; /* Ajusta a margem para telas menores que 768 pixels (tablets e celulares) */

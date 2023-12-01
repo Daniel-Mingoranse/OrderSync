@@ -14,7 +14,7 @@ const sidebarNavItems = [
 
 const Sidebar = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(true);
   const sidebarRef = React.useRef();
   const indicatorRef = React.useRef();
 
