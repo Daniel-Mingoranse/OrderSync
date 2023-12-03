@@ -14,7 +14,8 @@ const LoadingScreen = () => {
     useEffect(() => {
         const timer = setTimeout(() => {
             // Redirecione para a rota inicial após 3 segundos
-            navigate('/');
+            // rota provisoria enquanto constroi tela dashboard do cliente
+            navigate('/dashboard');
         }, 3000);
 
         // Limpe o temporizador ao desmontar o componente
