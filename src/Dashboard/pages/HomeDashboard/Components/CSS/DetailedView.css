@@ -1,0 +1,111 @@
+/* DetailedView.css */
+
+.detailed-view {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    max-height: 400px; /* Adicionando altura máxima */
+    overflow-y: auto; /* Adicionando barra de rolagem quando necessário */
+}
+.detailed-view.open {
+    opacity: 1;
+    transform: translateY(0);
+    width: 100vh; 
+}
+
+.detailed-view h2 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.pedidos-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.detailed-item {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    max-height: none; /* Removendo altura máxima para dispositivos móveis */
+    overflow-y: auto; /* Adicionando barra de rolagem quando necessário */
+}
+
+.detailed-item .status-marker {
+    width: 10px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 8px 0 0 8px;
+}
+
+.detailed-item .item-details {
+    margin-left: 15px;
+    display: flex;
+    flex-wrap: initial;
+}
+
+.detailed-item .item-details span {
+    margin-right: 15px; /* Adicione o espaçamento entre os spans */
+}
+
+/* Adicione um espaçamento à esquerda para o primeiro span da categoria */
+.pedidos-list.totalPedidos .item-details span:first-child {
+    margin-left: 0; /* Ou qualquer valor de espaçamento desejado */
+}
+
+.pedidos-list.pedidosPendentes .detailed-item .status-marker {
+    background-color: yellow;
+}
+
+.pedidos-list.pedidosConcluidos .detailed-item .status-marker {
+    background-color: rgb(0, 132, 255);
+}
+
+.pedidos-list.pedidosAndamento .detailed-item .status-marker {
+    background-color: green;
+}
+
+.pedidos-list.pedidosCancelados .detailed-item .status-marker {
+    background-color: red;
+}
+
+.detailed-item span {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+/* Adicionando estilos responsivos para dispositivos com largura menor que 767px */
+@media only screen and (max-width: 767px) {
+    .detailed-view {
+        padding: 10px;
+        max-height: none; /* Removendo a altura máxima para dispositivos móveis */
+        overflow-y: auto; /* Adicionando barra de rolagem quando necessário para dispositivos móveis */
+    }
+
+    .detailed-item {
+        padding: 10px;
+        max-height: none; /* Removendo a altura máxima para dispositivos móveis */
+        overflow-y: auto; /* Adicionando barra de rolagem quando necessário para dispositivos móveis */
+    }
+    .detailed-view.open {
+
+        width: 100%;
+    }
+
+}
