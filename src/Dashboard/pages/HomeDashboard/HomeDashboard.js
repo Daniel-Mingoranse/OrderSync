@@ -92,24 +92,26 @@ const Dashboard = () => {
           onClick={() => handleComponentClick('pedidosCancelados')}
         />
       </div>
-      {loading && <LoadingScreen />} {/* Renderizar a tela de carregamento quando necessário */}
-      <div className={`detailed-view-container ${selectedComponent ? 'visible' : ''}`}>
-        {selectedComponent ? (
-          // Corrigir a passagem do nome do componente
-          <DetailedView componentName={selectedComponent} data={10} />
-        ) : (
-          <div className="no-data-message">
-            <p>Nenhum dado selecionado. Clique em um resumo para ver os detalhes.</p>
-          </div>
-        )}
-        {selectedComponent && (
-          <div className="additional-details-container">
-            <span className="close-button" onClick={handleCloseButtonClick}>
-              Fechar
-            </span>
-          </div>
-        )}
-      </div>
+      {loading && <LoadingScreen />}
+      {/* Renderizar a tela de carregamento quando necessário */}
+      {!loading && ( // Renderizar o componente DetailedView somente quando não estiver carregando
+        <div className={`detailed-view-container ${selectedComponent ? 'visible' : ''}`}>
+          {selectedComponent ? (
+            <DetailedView componentName={selectedComponent} data={10} />
+          ) : (
+            <div className="no-data-message">
+              <p>Nenhum dado selecionado. Clique em um resumo para ver os detalhes.</p>
+            </div>
+          )}
+          {selectedComponent && (
+            <div className="additional-details-container">
+              <span className="close-button" onClick={handleCloseButtonClick}>
+                Fechar
+              </span>
+            </div>
+          )}
+        </div>
+      )}
     </div>
   );
 };

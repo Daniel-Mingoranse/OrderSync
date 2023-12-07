@@ -1,0 +1,186 @@
+/* styles.css */
+
+/* Estilo para a imagem de fundo */
+#mui-root {
+    background-image: url('https://source.unsplash.com/featured/?office,team,orders');
+    background-repeat: no-repeat;
+    background-color: #f5f5f5;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  /* Estilo para o papel (Paper) que contém o formulário de login e o perfil */
+  Paper {
+    margin-top: 8%;
+    margin-bottom: 8%;
+    display: flex;
+    flexDirection: column;
+    alignItems: center;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease-in-out;
+  }
+  
+  Paper:hover {
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Estilo para o Avatar */
+  Avatar {
+    margin: 1rem;
+    background-color: #1976D2;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  Avatar:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Estilo para o formulário dentro do Paper */
+  form {
+    width: 100%;
+    marginTop: 1rem;
+  }
+  
+  /* Estilo para os campos de texto no formulário e perfil */
+  TextField,
+.profile-details input,
+.profile-picture input,
+.profile-details textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  transition: border-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  outline: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.profile-picture{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+TextField:focus,
+.profile-details input:focus,
+.profile-details textarea:focus {
+  border-color: #3498db;
+  transform: scale(1.02);
+}  
+  /* Estilo para o botão de login e botões no perfil */
+  Button,
+  .profile-details button {
+    margin-top: 1rem;
+    background-color: #3498db;
+    color: #fff;
+    padding: 14px 20px; /* Aumente o espaçamento interno */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+  
+  Button:hover,
+  .profile-details button:hover {
+    background-color: #2980b9;
+    transform: scale(1.05); /* Aumente a escala ao passar o mouse */
+  }
+  
+  
+  /* Estilo para os links no final do formulário e perfil */
+  Link,
+  .profile-details a {
+    margin-top: 1rem;
+    cursor: pointer;
+    color: #1976D2;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  Link:hover,
+  .profile-details a:hover {
+    color: #145a8b;
+  }
+  
+  /* Perfil.css */
+  
+  /* Estilo para o contêiner do perfil */
+  .profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    max-width: 400px;
+    margin: 20px auto;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s ease-out forwards;
+  }
+  
+  .profile-picture > h2{
+    text-align: center;
+    margin-top: 0;
+  }
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .profile-container,
+  .profile-picture img,
+  .profile-details h2 {
+    animation: fadeInUp 0.5s ease-out forwards;
+  }
+  
+  .profile-details button {
+    animation: fadeInUp 0.5s ease-out forwards 0.6s; /* Adie a animação do botão */
+  }
+  
+  /* Estilo para a imagem de perfil */
+  .profile-picture img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1vh;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s ease-out forwards 0.2s;
+  }
+  
+  /* Estilo para os títulos no perfil */
+  .profile-details h2 input {
+    background-color: #f9f9f9; /* Adicione um fundo mais claro durante a edição */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 8px;
+  }
+  
+  
+  .profileImage{
+    height: 5vh;
+    width: 5vh;
+    display: flex;
+    margin-bottom: 10px;
+  }
+  
+  @keyframes shake {
+    0%, 100% {
+      transform: translateX(0);
+    }
+    25%, 75% {
+      transform: translateX(-10px);
+    }
+    50% {
+      transform: translateX(10px);
+    }
+  }

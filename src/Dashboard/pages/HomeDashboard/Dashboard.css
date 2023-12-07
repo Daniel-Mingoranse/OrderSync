@@ -13,6 +13,7 @@
     align-items: center;
     background-color: var(--background-color);
     padding: 20px;
+    height: 100vh;
     border-radius: 10px;
     box-shadow: var(--box-shadow);
 }
@@ -38,6 +39,7 @@
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     background-color: var(--primary-color);
     color: #fff;
+    transition: 0.7s;
 }
 
 .detailed-view-container {

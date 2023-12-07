@@ -1,11 +1,11 @@
 // DataSummary.jsx
 import React from 'react';
-
+import './CSS/DataSummary.css'
 const DataSummary = ({ title, data, onClick }) => {
   return (
     <div className="data-summary" onClick={onClick}>
       <h2>{title}</h2>
-      <p>{data}</p>
+      <p className='dataValue'>{data}</p>
     </div>
   );
 };

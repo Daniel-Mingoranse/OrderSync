@@ -13,6 +13,7 @@ import AppLayout from './Dashboard/UI/layout/AppDefaultLayout';
 import HomeDashboard from './Dashboard/pages/HomeDashboard/HomeDashboard'
 import BudgetClient from './Dashboard/pages/ClientCards/BudgetClient/BudgetClient'
 import OrderClient from './Dashboard/pages/ClientCards/OrderClient/OrderClient'
+import Profile from './Dashboard/pages/Profile/profile'
 const root = createRoot(document.getElementById('root'));
 
 root.render(
@@ -35,6 +36,8 @@ root.render(
           <Route path="services" element={<CardDashboard />} />
           <Route path="orcamento" element={<BudgetClient />} />
           <Route path="pedidos" element={<OrderClient />} />
+          <Route path="profile" element={<Profile />} />
+
         </Route>
       </Routes>
     </Router>
