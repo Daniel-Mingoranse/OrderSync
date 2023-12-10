@@ -20,7 +20,7 @@ const Profile = () => {
     };
 
     const handleSaveClick = () => {
-        // Aqui você normalmente faria uma chamada para salvar os dados no backend
+        // Adicione validações de entrada, se necessário
         setEditing(false);
         // Simulando uma chamada assíncrona (pode ser uma requisição HTTP, por exemplo)
         setTimeout(() => {
@@ -33,78 +33,70 @@ const Profile = () => {
         setUser({ ...user, [name]: value });
     };
 
-    // Utilize o hook useSpring para criar animações
-    const nameAnimation = useSpring({
+    const inputAnimation = useSpring({
         opacity: isEditing ? 1 : 0,
         transform: isEditing ? 'translateY(0)' : 'translateY(20px)',
-        delay: isEditing ? 400 : 0, // Adicione um atraso para uma animação mais suave
-    });
-
-    const emailAnimation = useSpring({
-        opacity: isEditing ? 1 : 0,
-        transform: isEditing ? 'translateY(0)' : 'translateY(20px)',
-        delay: isEditing ? 500 : 0,
-    });
-
-    const bioAnimation = useSpring({
-        opacity: isEditing ? 1 : 0,
-        transform: isEditing ? 'translateY(0)' : 'translateY(20px)',
-        delay: isEditing ? 600 : 0,
+        delay: isEditing ? 400 : 0,
     });
 
     return (
-    <div className={`profile-container ${isEditing ? 'editing' : ''}`}>
-      <div className="profile-picture">
-        <img src={user.profilePicture} alt="Profile" className="profileImage" />
-        <h2 className="titleProfile">
+        <div className={`profile-container ${isEditing ? 'editing' : ''}`}>
+            <div className="profile-picture">
+                <img src={user.profilePicture} alt="Profile" className="profileImage" />
+                <h2 className="titleProfile">
                     {isEditing ? (
-                       <animated.input
-                       type="text"
-                       name="name"
-                       id="name"
-                       value={user.name}
-                       onChange={handleInputChange}
-                       style={nameAnimation}
-                     />
+                        <animated.input
+                            type="text"
+                            name="name"
+                            id="name"
+                            value={user.name}
+                            onChange={handleInputChange}
+                            placeholder="Seu nome"
+                            style={inputAnimation}
+                        />
                     ) : (
                         user.name
                     )}
                 </h2>
-      </div>
-      <div className="profile-details">
-        <p>
-          Email: {isEditing ? (
-            <animated.input
-              type="text"
-              name="email"
-              value={user.email}
-              onChange={handleInputChange}
-              style={emailAnimation}
-            />
-          ) : (
-            user.email
-          )}
-        </p>
-        <p>
-         {isEditing ? (
-            <animated.textarea
-              name="bio"
-              onChange={handleInputChange}
-              style={bioAnimation}
-            />
-          ) : (
-            user.bio
-          )}
-        </p>
-        {isEditing && (
-          <button onClick={handleSaveClick}>Salvar</button>
-        )}
-        {!isEditing && (
-          <button onClick={handleEditClick}>Editar</button>
-        )}
-      </div>
-    </div>
-  );
+            </div>
+            <div className="profile-details">
+                <p>
+                    Email:{' '}
+                    {isEditing ? (
+                        <animated.input
+                            type="text"
+                            name="email"
+                            value={user.email}
+                            onChange={handleInputChange}
+                            placeholder="Seu email"
+                            style={inputAnimation}
+                        />
+                    ) : (
+                        user.email
+                    )}
+                </p>
+                <p>
+                    Bio:{' '}
+                    {isEditing ? (
+                        <animated.textarea
+                            name="bio"
+                            onChange={handleInputChange}
+                            placeholder="Sua biografia"
+                            style={inputAnimation}
+                        />
+                    ) : (
+                        user.bio
+                    )}
+                </p>
+                {isEditing && (
+                    <button onClick={handleSaveClick}>Salvar</button>
+                )}
+                {!isEditing && (
+                    <button onClick={handleEditClick}>Editar</button>
+                )}
+            </div>
+        </div>
+    );
 };
 
 export default Profile;
