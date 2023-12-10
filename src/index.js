@@ -14,6 +14,7 @@ import HomeDashboard from './Dashboard/pages/HomeDashboard/HomeDashboard'
 import BudgetClient from './Dashboard/pages/ClientCards/BudgetClient/BudgetClient'
 import OrderClient from './Dashboard/pages/ClientCards/OrderClient/OrderClient'
 import Profile from './Dashboard/pages/Profile/profile'
+import OrderDetailsPage from './Dashboard/pages/HomeDashboard/Components/OrderDetails';
 const root = createRoot(document.getElementById('root'));
 
 root.render(
@@ -37,6 +38,7 @@ root.render(
           <Route path="orcamento" element={<BudgetClient />} />
           <Route path="pedidos" element={<OrderClient />} />
           <Route path="profile" element={<Profile />} />
+          <Route path="orderdetails/:orderId" element={<OrderDetailsPage />} />
 
         </Route>
       </Routes>
