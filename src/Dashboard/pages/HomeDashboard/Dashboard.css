@@ -141,7 +141,7 @@
 
     .detailed-view-container {
         margin-top: -7px;
-        width: 43vh;
-        margin-left: 14px;
+        max-width: 40vh;
+        margin-right:0vh;
     }
 }

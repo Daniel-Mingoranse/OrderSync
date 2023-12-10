@@ -1,13 +1,17 @@
 .sidebar {
-  position: fixed;
   top: 0;
   left: 0;
+  bottom: 0;
+  z-index: 999;
   height: 100vh;
-  width: 260px;
-  background-color: #1f2532;
+  position: fixed;
+  width: 30vh;
+  background-color: white;
   color: #dcdcdc;
   transition: width 0.3s ease-in-out;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   padding-top: 20px;
+
 
   &__logo {
     display: grid;
@@ -18,14 +22,14 @@
     font-family: 'Mochiy Pop P one', sans-serif;
     color: rgb(39 103 180);
     cursor: pointer;
-    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out; 
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
   }
 
   &.collapsed {
     width: 60px;
 
     .sidebar__logo {
-      transform: rotate(180deg); 
+      transform: rotate(180deg);
       color: rgb(58, 56, 56);
     }
   }
@@ -77,7 +81,7 @@
   }
 
   &.collapsed {
-    width: 60px;
+    width: 7vh;
 
     .sidebar__menu__item__icon {
       margin-right: 12px;
@@ -97,6 +101,8 @@
       width: 60px;
     }
   }
+
+  
 }
 
 a {
@@ -115,9 +121,10 @@ a {
 }
 
 .sidebar__logo {
-  -webkit-tap-highlight-color: transparent; /* Para navegadores baseados no WebKit, como Chrome e Safari */
-  tap-highlight-color: transparent; /* Para navegadores modernos */
+  -webkit-tap-highlight-color: transparent;
+  /* Para navegadores baseados no WebKit, como Chrome e Safari */
+  tap-highlight-color: transparent;
+  /* Para navegadores modernos */
   touch-action: none;
   user-select: none;
 }
-

@@ -42,6 +42,7 @@ const Sidebar = () => {
             text={item.display}
             active={activeIndex === index}
             isCollapsed={isCollapsed}
+            onClick={() => setActiveIndex(index)} 
           />
         ))}
       </div>
