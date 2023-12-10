@@ -97,7 +97,7 @@ const Dashboard = () => {
       {!loading && ( // Renderizar o componente DetailedView somente quando não estiver carregando
         <div className={`detailed-view-container ${selectedComponent ? 'visible' : ''}`}>
           {selectedComponent ? (
-            <DetailedView componentName={selectedComponent} data={10} />
+            <DetailedView componentName={selectedComponent} data={50} />
           ) : (
             <div className="no-data-message">
               <p>Nenhum dado selecionado. Clique em um resumo para ver os detalhes.</p>

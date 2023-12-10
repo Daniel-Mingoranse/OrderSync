@@ -9,7 +9,8 @@ import Box from '@mui/material/Box';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-
+import BackButton from '../Components/BackButton';
+import './OrderClient.css'
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 const defaultTheme = createTheme();
 
@@ -34,8 +35,17 @@ export default function SupplierOrderForm() {
       // Adicione lógica para enviar o pedido ao fornecedor aqui
     };
   
+    const handleBackClick = () => {
+      // Adicione aqui a lógica para lidar com o clique no botão de voltar
+      console.log('Botão de Voltar clicado!');
+    };
+
+    
     return (
-     
+     <>
+     <div className='backButton'>
+     <BackButton onClick={handleBackClick} />
+     </div>
         <Container component="main" maxWidth="xs">
           <CssBaseline />
           <Box
@@ -180,7 +190,7 @@ export default function SupplierOrderForm() {
             </Box>
           </Box>
         </Container>
-      
+        </>
     );
   }
   

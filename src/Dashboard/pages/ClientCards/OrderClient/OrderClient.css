@@ -1,0 +1,21 @@
+/* OrderClient.css */
+
+.backButton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; /* Espaço entre os itens */
+  margin-bottom: 20px; /* Ajuste conforme necessário */
+}
+
+.backButton button {
+  margin-right: 80vh; /* Move o botão para a posição mais à direita possível */
+  position:  fixed;
+  margin-top: 10vh;
+}
+
+@media (max-width: 767px) {
+    .backButton {
+      display: none; /* Oculta o contêiner do botão */
+    }
+  }

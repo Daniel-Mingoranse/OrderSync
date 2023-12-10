@@ -1,0 +1,29 @@
+/* Estilos CSS para o botão de voltar */
+.back-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px; /* Ajuste o tamanho conforme necessário */
+    height: 50px; /* Ajuste o tamanho conforme necessário */
+    border-radius: 50%;
+    background-color: #3498db; /* Cor de fundo do botão */
+    color: #fff; /* Cor do ícone e texto */
+    border: none;
+    cursor: pointer;
+    font-size: 18px; /* Ajuste o tamanho da fonte conforme necessário */
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    position: relative;
+  }
+  
+  .back-button:hover {
+    background-color: #2980b9; /* Cor de fundo do botão ao passar o mouse */
+  }
+  
+  /* Estilo para o ícone dentro do botão */
+  .back-button svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
