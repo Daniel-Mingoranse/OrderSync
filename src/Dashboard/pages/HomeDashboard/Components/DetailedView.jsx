@@ -2,6 +2,7 @@
 import React from 'react';
 import './CSS/DetailedView.css';
 import './CSS/Icon.css'
+import { Link } from 'react-router-dom';
 import { FaEye } from 'react-icons/fa';
 const DetailedView = ({ componentName, data }) => {
   const detalhes = getDetalhes(componentName);
@@ -24,9 +25,12 @@ const DetailedView = ({ componentName, data }) => {
                   <span className="pedido">{pedido.numero}</span>
                   <span className="data">{`Data: ${pedido.data}`}</span>
                   <span className="situacao">{`Situação: ${pedido.situacao}`}</span>
-                  <span className="icone-visualizacao">
-                    <FaEye />
-                  </span>
+                  {/* Use o Link para criar o link para a página de detalhes */}
+                  <Link to={`/dashboard/orderdetails/${pedido.numero}`}>
+                    <span className="icone-visualizacao">
+                      <FaEye />
+                    </span>
+                  </Link>
                 </div>
               </li>
             ))}

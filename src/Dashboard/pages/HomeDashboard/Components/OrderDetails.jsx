@@ -9,7 +9,7 @@ const OrderDetailsPage = () => {
     const getOrderDetails = (orderId) => {
         return {
             id: orderId,
-            numero: `Pedido ${orderId}`,
+            numero: `${orderId}`,
             data: '00/00/00',
             situacao: 'pendente',
             cliente: 'João da Silva',
