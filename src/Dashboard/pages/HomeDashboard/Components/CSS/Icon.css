@@ -1,0 +1,17 @@
+.item-details {
+    /* Adicione estilos gerais para o container do item */
+    display: flex;
+    align-items: center;
+    /* Adicione mais estilos conforme necessário */
+  }
+  
+  /* Estilo para o ícone de visualização */
+  .icone-visualizacao {
+    margin-left: 10px; /* Ajuste a margem conforme necessário */
+    color: #007bff; /* Cor do ícone - substitua pela cor desejada */
+    cursor: pointer; /* Adiciona um cursor indicando interatividade */
+  }
+  
+  .icone-visualizacao:hover {
+    color: #0056b3; /* Cor ao passar o mouse - ajuste conforme desejado */
+  }

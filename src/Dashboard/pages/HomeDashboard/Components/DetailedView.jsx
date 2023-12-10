@@ -1,14 +1,15 @@
 // DetailedView.jsx
 import React from 'react';
 import './CSS/DetailedView.css';
-
+import './CSS/Icon.css'
+import { FaEye } from 'react-icons/fa';
 const DetailedView = ({ componentName, data }) => {
   const detalhes = getDetalhes(componentName);
   const numSpans = data || 10; // Usando o valor de data ou padrão para 10
 
   const listaDetalhes = detalhes ? detalhes.slice(0, numSpans) : [];
- // Adicionando espaços entre palavras no título
- const tituloFormatado = componentName.replace(/([a-z])([A-Z])/g, '$1 $2');
+  // Adicionando espaços entre palavras no título
+  const tituloFormatado = componentName.replace(/([a-z])([A-Z])/g, '$1 $2');
 
   return (
     <div className={`detailed-view ${detalhes ? 'open' : ''}`}>
@@ -23,7 +24,9 @@ const DetailedView = ({ componentName, data }) => {
                   <span className="pedido">{pedido.numero}</span>
                   <span className="data">{`Data: ${pedido.data}`}</span>
                   <span className="situacao">{`Situação: ${pedido.situacao}`}</span>
-                  {/* Adicione mais dados do pedido conforme necessário */}
+                  <span className="icone-visualizacao">
+                    <FaEye />
+                  </span>
                 </div>
               </li>
             ))}
