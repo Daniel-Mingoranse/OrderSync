@@ -1,5 +1,4 @@
-// Profile.jsx
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './profile.css';
 import profile from '../../../assets/profile.png';
 import { useSpring, animated } from 'react-spring';
@@ -13,14 +12,25 @@ const Profile = () => {
     };
 
     const [user, setUser] = useState(initialUser);
+    const [originalUser, setOriginalUser] = useState(initialUser);
     const [isEditing, setEditing] = useState(false);
 
+    useEffect(() => {
+        setOriginalUser(user);
+    }, [user]);
+
+  
     const handleEditClick = () => {
-        setEditing(true);
+        setEditing(!isEditing);
+        if (!isEditing) {
+            setOriginalUser(user);
+        } else {
+            // Se estiver saindo do modo de edição (clicando em "Voltar"), restaura os dados originais
+            setUser(originalUser);
+        }
     };
 
     const handleSaveClick = () => {
-        // Adicione validações de entrada, se necessário
         setEditing(false);
         // Simulando uma chamada assíncrona (pode ser uma requisição HTTP, por exemplo)
         setTimeout(() => {
@@ -28,6 +38,11 @@ const Profile = () => {
         }, 1000);
     };
 
+    const handleCancelClick = () => {
+        // Ao clicar em "Voltar", restaura os dados para o estado original
+        setUser(originalUser);
+        setEditing(false);
+    };
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setUser({ ...user, [name]: value });
@@ -89,11 +104,13 @@ const Profile = () => {
                     )}
                 </p>
                 {isEditing && (
-                    <button onClick={handleSaveClick}>Salvar</button>
+                    <>
+                        <button onClick={handleSaveClick}>Salvar</button>
+                        <br />
+                        <button onClick={handleCancelClick}>Voltar</button>
+                    </>
                 )}
-                {!isEditing && (
-                    <button onClick={handleEditClick}>Editar</button>
-                )}
+                {!isEditing && <button onClick={handleEditClick}>Editar</button>}
             </div>
         </div>
     );

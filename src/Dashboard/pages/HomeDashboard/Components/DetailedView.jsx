@@ -27,9 +27,7 @@ const DetailedView = ({ componentName, data }) => {
                   <span className="situacao">{`Situação: ${pedido.situacao}`}</span>
                   {/* Use o Link para criar o link para a página de detalhes */}
                   <Link to={`/dashboard/orderdetails/${pedido.numero}`}>
-                    <span className="icone-visualizacao">
-                      <FaEye />
-                    </span>
+                    <button>Detalhes do Pedido</button>
                   </Link>
                 </div>
               </li>

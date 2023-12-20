@@ -72,7 +72,7 @@ const Dashboard = () => {
     <div className="dashboard">
       <div className="summary-container">
         <DataSummary
-          title="Pedidos em Concluídos"
+          title="Pedidos Concluídos"
           data={300}
           onClick={() => handleComponentClick('pedidosConcluidos')}
         />
