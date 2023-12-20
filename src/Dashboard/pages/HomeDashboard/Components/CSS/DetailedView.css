@@ -94,6 +94,8 @@
 @media only screen and (max-width: 767px) {
     .detailed-view {
         padding: 10px;
+        border: none;
+        background-color: transparent;
         max-height: none; /* Removendo a altura máxima para dispositivos móveis */
         overflow-y: auto; /* Adicionando barra de rolagem quando necessário para dispositivos móveis */
     }
@@ -106,6 +108,11 @@
     .detailed-view.open {
 
         width: 100%;
+    }
+    .button-details{
+        width: 20vh;
+        padding: 1.5vh;
+        text-align: center;
     }
 
 }
