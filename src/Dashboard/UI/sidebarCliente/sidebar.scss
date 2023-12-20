@@ -52,13 +52,6 @@
         color: white;
       }
 
-      &.active {
-        background-color: #2767b4;
-        color: white;
-        font-size: 21px;
-        transition: font-size 0.3s ease-in-out, background-color 0.3s ease-in-out, color 0.3s ease-in-out; // Adiciona uma transição de cor
-      }
-
       &__icon {
         margin-right: 12px;
         align-items: center;
@@ -69,20 +62,12 @@
       }
     }
 
-    &__indicator {
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 60px;
-      width: 3px;
-      background-color: #308efe;
-      z-index: 1;
-      transition: top 0.3s ease-in-out;
-    }
+    
   }
 
   &.collapsed {
     width: 7vh;;
+    margin: 0;
 
     .sidebar__menu__item__icon {
       margin-right: 12px;
@@ -94,12 +79,20 @@
     }
   }
 
-  @media (max-width: 768px) {
+  @media only screen and (max-width: 768px) {
     width: 100%;
     padding-top: 80px;
-
+  
     &.collapsed {
-      width: 60px;
+     background-color: transparent;
+     border: none;
+     box-shadow: none;
+     margin: 1px;
+    }
+  
+    .sidebar__logo {
+      margin-top: -10vh;
+      margin-bottom: 0;
     }
   }
 

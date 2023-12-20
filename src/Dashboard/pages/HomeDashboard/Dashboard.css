@@ -126,6 +126,8 @@
         flex-direction: column; /* Alterando para coluna para dispositivos móveis */
         text-align: center; /* Centralizando o conteúdo */
         padding: 0;
+        box-shadow: none;
+        background-color: transparent;
     }
 
     .summary-container {
