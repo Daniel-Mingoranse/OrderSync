@@ -8,14 +8,17 @@
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-    max-height: 400px; /* Adicionando altura máxima */
-    overflow-y: auto; /* Adicionando barra de rolagem quando necessário */
+    max-height: 400px;
+    /* Adicionando altura máxima */
+    overflow-y: auto;
+    /* Adicionando barra de rolagem quando necessário */
     margin-left: 0vh;
 }
+
 .detailed-view.open {
     opacity: 1;
     transform: translateY(0);
-    width: 100vh; 
+    width: 100vh;
 }
 
 .detailed-view h2 {
@@ -39,8 +42,10 @@
     display: flex;
     align-items: center;
     position: relative;
-    max-height: none; /* Removendo altura máxima para dispositivos móveis */
-    overflow-y: auto; /* Adicionando barra de rolagem quando necessário */
+    max-height: none;
+    /* Removendo altura máxima para dispositivos móveis */
+    overflow-y: auto;
+    /* Adicionando barra de rolagem quando necessário */
 }
 
 .detailed-item .status-marker {
@@ -55,16 +60,19 @@
 .detailed-item .item-details {
     margin-left: 15px;
     display: flex;
-    flex-wrap: initial;
+    flex-wrap: wrap;
+    width: auto;
 }
 
 .detailed-item .item-details span {
-    margin-right: 15px; /* Adicione o espaçamento entre os spans */
+    margin-right: 15px;
+    /* Adicione o espaçamento entre os spans */
 }
 
 /* Adicione um espaçamento à esquerda para o primeiro span da categoria */
 .pedidos-list.totalPedidos .item-details span:first-child {
-    margin-left: 0; /* Ou qualquer valor de espaçamento desejado */
+    margin-left: 0;
+    /* Ou qualquer valor de espaçamento desejado */
 }
 
 .pedidos-list.pedidosPendentes .detailed-item .status-marker {
@@ -95,22 +103,28 @@
         padding: 10px;
         border: none;
         background-color: transparent;
-        max-height: none; /* Removendo a altura máxima para dispositivos móveis */
-        overflow-y: auto; /* Adicionando barra de rolagem quando necessário para dispositivos móveis */
+        max-height: none;
+        /* Removendo a altura máxima para dispositivos móveis */
+        overflow-y: auto;
+        /* Adicionando barra de rolagem quando necessário para dispositivos móveis */
     }
 
     .detailed-item {
         padding: 10px;
-        max-height: none; /* Removendo a altura máxima para dispositivos móveis */
-        overflow-y: auto; /* Adicionando barra de rolagem quando necessário para dispositivos móveis */
+        max-height: none;
+        /* Removendo a altura máxima para dispositivos móveis */
+        overflow-y: auto;
+        /* Adicionando barra de rolagem quando necessário para dispositivos móveis */
     }
-    .detailed-view.open {
 
-        width: 100%;
+    .detailed-view.open {
+        width: 45vh;
+        margin: 10px 0px;
     }
-    .button-details{
-        width: 20vh;
-        padding: 1.5vh;
+
+    .button-details {
+        width: 18vh;
+        padding: 0.8vh;
         text-align: center;
     }
 

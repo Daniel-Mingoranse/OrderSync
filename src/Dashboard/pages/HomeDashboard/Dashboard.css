@@ -128,11 +128,19 @@
         padding: 0;
         box-shadow: none;
         background-color: transparent;
+        max-width: 50vh;
     }
 
     .summary-container {
-        flex-direction: column; /* Alinhando resumos em coluna */
-        gap: 10px; /* Reduzindo o espaçamento entre resumos */
+        flex-direction: column;
+        gap: 10px;
+        margin-left: 0vh;
+        position: relative;
+        display: flex;
+        top: 25%;
+        left: 25%;
+        transform: translate(-13vh, -23vh);
+        margin-bottom: 5vh;
     }
 
     .data-summary {
@@ -143,7 +151,8 @@
 
     .detailed-view-container {
         margin-top: -7px;
-        max-width: 40vh;
-        margin-right:0vh;
+        max-width: 50vh;
+        left: 0;
+
     }
 }

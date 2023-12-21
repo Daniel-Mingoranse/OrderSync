@@ -4,25 +4,6 @@
   overflow-x: hidden;
   justify-content: space-between;
 
-  .a {
-    
-    background-color: #fff;
-    padding-top: 50px;
-    max-width: 7vh;
-    box-shadow: 0 0 10px rgba(26, 25, 25, 0.292);
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0; /* Ocupa toda a altura da tela */
-    z-index: 999;
-  }
-  .menu{
-    position: fixed;
-    width: calc(50% - 10px); /* ou qualquer outra largura desejada */
-    margin-right: 10px;
-   
-  }
-
   .content {
     flex: 1;
     display: block;
@@ -46,7 +27,7 @@
     }
   
     @media (max-width: 480px) {
-      margin-left: 10vw; /* Ajusta a margem para telas menores que 480 pixels (celulares) */
+      margin: -10px;
     }
   }
   

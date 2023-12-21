@@ -5,11 +5,11 @@ import { FaHome, FaUser, FaTools, FaCog, FaSignOutAlt, FaChevronLeft } from 'rea
 
 
 const sidebarNavItems = [
-  { display: 'Inicio', icon: <FaHome />, to: '/' },
-  { display: 'Perfil', icon: <FaUser />, to: '/profile' },
-  { display: 'Serviços', icon: <FaTools />, to: '/services' },
-  { display: 'Configurações', icon: <FaCog />, to: '/settings' },
-  { display: 'Sair', icon: <FaSignOutAlt />, to: '/logout' },
+  { display: 'Inicio', to: '/' },
+  { display: 'Perfil', to: '/profile' },
+  { display: 'Serviços', to: '/services' },
+  { display: 'Configurações', to: '/settings' },
+  { display: 'Sair', to: '/logout' },
 ];
 
 const Sidebar = () => {
