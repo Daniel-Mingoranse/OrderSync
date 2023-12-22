@@ -32,6 +32,8 @@
     .sidebar__logo {
       transform: rotate(180deg);
       color: rgb(58, 56, 56);
+      transform: rotate(180deg);
+      color: rgb(58, 56, 56);
       background-color: white;
       border: 1px solid black;
       width: 50px;
@@ -66,7 +68,6 @@
       &__icon {
         margin-right: 12px;
         align-items: center;
-
         i {
           font-size: 2rem;
           transition: margin-right 0.3s ease-in-out;
@@ -74,12 +75,11 @@
       }
     }
 
-
+    
   }
 
   &.collapsed {
-    width: 7vh;
-    ;
+    width: 7vh;;
     margin: 0;
 
     .sidebar__menu__item__icon {
@@ -95,21 +95,26 @@
   @media only screen and (max-width: 768px) {
     width: 100%;
     padding-top: 80px;
-
+  
     &.collapsed {
-      background-color: transparent;
-      border: none;
-      box-shadow: none;
-      margin: 1px;
-    }
+     background-color: transparent;
+     border: none;
+     box-shadow: none;
+     margin: 1px;
 
+      &.sidebar__menu__item{
+        display: none;
+      }
+    }
+  
     .sidebar__logo {
-      margin-top: -10vh;
+      margin-top: -8vh;
       margin-bottom: 0;
     }
+
   }
 
-
+  
 }
 
 a {
