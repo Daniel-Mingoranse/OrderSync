@@ -118,8 +118,9 @@
     }
 
     .detailed-view.open {
-        width: 45vh;
+        width: 42vh;
         margin: 10px 0px;
+        transform: translate(-1vh, 0vh);
     }
 
     .button-details {
