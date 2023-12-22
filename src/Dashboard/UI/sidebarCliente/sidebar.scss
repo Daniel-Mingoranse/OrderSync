@@ -28,6 +28,7 @@
 
   &.collapsed {
     width: 60px;
+    
 
     .sidebar__logo {
       transform: rotate(180deg);
@@ -95,10 +96,10 @@
     padding-top: 80px;
   
     &.collapsed {
-     background-color: transparent;
-     border: none;
-     box-shadow: none;
-     margin: 1px;
+      background-color: #0000;
+      border: none;
+      box-shadow: none;
+      margin: 1px;
 
       &.sidebar__menu__item{
         display: none;
@@ -114,6 +115,9 @@
       margin-bottom: 0;
     }
 
+    .sidebar.collapsed {
+      height: 0;
+    }
   }
 
   
