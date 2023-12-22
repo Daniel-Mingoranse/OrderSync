@@ -4,6 +4,7 @@ import './CSS/DetailedView.css';
 import './CSS/Icon.css'
 import { Link } from 'react-router-dom';
 import { FaEye } from 'react-icons/fa';
+import { BiDetail } from 'react-icons/bi';
 const DetailedView = ({ componentName, data }) => {
   const detalhes = getDetalhes(componentName);
   const numSpans = data || 10; // Usando o valor de data ou padrão para 10
@@ -27,7 +28,7 @@ const DetailedView = ({ componentName, data }) => {
                   <span className="situacao">{`Situação: ${pedido.situacao}`}</span>
                   {/* Use o Link para criar o link para a página de detalhes */}
                   <Link to={`/dashboard/orderdetails/${pedido.numero}`}>
-                    <button className='button-details'>Detalhes do Pedido</button>
+                    <button className='button-details'>Mais Detalhes <BiDetail /></button>
                   </Link>
                 </div>
               </li>
