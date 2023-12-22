@@ -38,7 +38,6 @@ const Sidebar = () => {
           <SidebarItem
             key={index}
             to={`/dashboard${item.to}`}
-            icon={item.icon}
             text={item.display}
             active={activeIndex === index}
             isCollapsed={isCollapsed}
