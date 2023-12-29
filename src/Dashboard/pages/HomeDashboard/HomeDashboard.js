@@ -92,6 +92,13 @@ const Dashboard = () => {
           onClick={() => handleComponentClick('pedidosCancelados')}
         />
       </div>
+      {/* Legenda de cores */}
+      <div className='legenda-cores'>
+        <p><span className="estado concluido"></span>Pedidos Concluídos</p>
+        <p><span className="estado andamento"></span> Pedidos em Andamento</p>
+        <p><span className="estado pendente"></span>Pedidos Pendentes</p>
+        <p><span className="estado cancelado"></span>Pedidos Cancelados</p>
+      </div>
       {loading && <LoadingScreen />}
       {/* Renderizar a tela de carregamento quando necessário */}
       {!loading && ( // Renderizar o componente DetailedView somente quando não estiver carregando
