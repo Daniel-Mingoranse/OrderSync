@@ -1,6 +1,6 @@
 /* styles.css */
 
-/* Estilo para a imagem de fundo */
+/* Background image style */
 #mui-root {
   background-image: url('https://source.unsplash.com/featured/?office,team,orders');
   background-repeat: no-repeat;
@@ -9,10 +9,9 @@
   background-position: center;
 }
 
-/* Estilo para o papel (Paper) que contém o formulário de login e o perfil */
+/* Style for the Paper container containing login form and profile */
 Paper {
-  margin-top: 8%;
-  margin-bottom: 8%;
+  margin: 8% 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -26,7 +25,7 @@ Paper:hover {
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
 }
 
-/* Estilo para o Avatar */
+/* Avatar style */
 Avatar {
   margin: 1rem;
   background-color: #1976D2;
@@ -37,13 +36,13 @@ Avatar:hover {
   transform: scale(1.1);
 }
 
-/* Estilo para o formulário dentro do Paper */
+/* Form style */
 form {
   width: 100%;
-  margin-top: 1rem; /* Corrija a propriedade marginTop para camelCase */
+  margin-top: 1rem;
 }
 
-/* Estilo para os campos de texto no formulário e perfil */
+/* Style for text fields in the form and profile */
 TextField,
 .profile-details input,
 .profile-picture input,
@@ -71,15 +70,14 @@ TextField:focus,
   transform: scale(1.02);
 }
 
-/* Estilo para o botão de login e botões no perfil */
+/* Style for login button and buttons in the profile */
 Button,
 .profile-details button {
-  margin-top: 1rem;
-  margin: auto; /* Adicione esta propriedade para centralizar horizontalmente */
+  margin: 1rem auto;
   display: block;
   background-color: #3498db;
   color: #fff;
-  padding: 14px 20px; /* Aumente o espaçamento interno */
+  padding: 14px 20px;
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -89,10 +87,10 @@ Button,
 Button:hover,
 .profile-details button:hover {
   background-color: #2980b9;
-  transform: scale(1.05); /* Aumente a escala ao passar o mouse */
+  transform: scale(1.05);
 }
 
-/* Estilo para os links no final do formulário e perfil */
+/* Style for links at the end of the form and profile */
 Link,
 .profile-details a {
   margin-top: 1rem;
@@ -102,15 +100,19 @@ Link,
   transition: color 0.3s ease-in-out;
 }
 
+.profile-details p {
+  max-width: 45vh;
+}
+
 Link:hover,
 .profile-details a:hover {
   color: #145a8b;
 }
 
-/* Perfil.css */
+/* Profile.css */
 
-/* Estilo para o contêiner do perfil */
-.profile-container {
+/* Style for the profile container */
+.profile-container, .profile-containerediting {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -121,27 +123,42 @@ Link:hover,
   background-color: #ffffff;
   max-width: 400px;
   margin: 20px auto;
+  margin-top: 0vh;
   opacity: 0;
   transform: translateY(20px);
   animation: fadeInUp 0.5s ease-out forwards;
 }
 
+textarea {
+  resize: none;
+}
+
+.buttons-formProfile {
+  display: flex;
+  flex-direction: row;
+}
+
 @media (max-width: 768px) {
-  .profile-container {
-    max-width: 80vw; /* Ajuste para ocupar a largura total do dispositivo até 768 pixels de largura */
-    width: 100%; /* Certifique-se de ocupar a largura total quando max-width é menor que a largura da tela */
+  
+  .profile-containerediting {
+    max-width: 80vw;
+    width: 100%;
     margin: 0;
     box-shadow: none;
-    padding: 10px; /* Reduza o preenchimento para economizar espaço */
+    padding: 10px;
     align-items: center;
+  }
+  .profile-details p {
+    max-width: 35vh;
   }
 }
 
 @media (max-width: 480px) {
   .profile-container {
-    max-width: 95vw; /* Ajuste para ocupar a largura total do dispositivo até 480 pixels de largura */
+    max-width: 95vw;
   }
 }
+
 .profile-picture > h2 {
   text-align: center;
   margin-top: 0;
@@ -154,8 +171,6 @@ Link:hover,
   }
 }
 
-
-
 .profile-container,
 .profile-picture img,
 .profile-details h2 {
@@ -166,7 +181,7 @@ Link:hover,
   animation: fadeInUp 0.5s ease-out forwards 0.6s;
 }
 
-/* Estilo para a imagem de perfil */
+/* Style for the profile image */
 .profile-picture img {
   width: 150px;
   height: 150px;
@@ -178,9 +193,13 @@ Link:hover,
   animation: fadeInUp 0.5s ease-out forwards 0.2s;
 }
 
-/* Estilo para os títulos no perfil */
+.profileImage:hover {
+  opacity: 1;
+}
+
+/* Style for titles in the profile */
 .profile-details h2 input {
-  background-color: #f9f9f9; /* Adicione um fundo mais claro durante a edição */
+  background-color: #f9f9f9;
   border: 1px solid #ddd;
   border-radius: 5px;
   padding: 8px;

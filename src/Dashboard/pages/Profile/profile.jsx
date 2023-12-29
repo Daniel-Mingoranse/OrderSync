@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import './profile.css';
-import profile from '../../../assets/profile.png';
+import defaultProfileImage from '../../../assets/profile.png';
 import { useSpring, animated } from 'react-spring';
 
 const Profile = () => {
     const initialUser = {
         name: 'Daniel',
-        profilePicture: profile,
+        profilePicture: defaultProfileImage,
         email: 'daniel@example.com',
         bio: 'Desenvolvedor apaixonado por tecnologia e música.',
     };
@@ -14,18 +14,17 @@ const Profile = () => {
     const [user, setUser] = useState(initialUser);
     const [originalUser, setOriginalUser] = useState(initialUser);
     const [isEditing, setEditing] = useState(false);
+    const [isHovered, setHovered] = useState(false);
 
     useEffect(() => {
         setOriginalUser(user);
     }, [user]);
 
-  
     const handleEditClick = () => {
         setEditing(!isEditing);
         if (!isEditing) {
             setOriginalUser(user);
         } else {
-            // Se estiver saindo do modo de edição (clicando em "Voltar"), restaura os dados originais
             setUser(originalUser);
         }
     };
@@ -39,25 +38,59 @@ const Profile = () => {
     };
 
     const handleCancelClick = () => {
-        // Ao clicar em "Voltar", restaura os dados para o estado original
         setUser(originalUser);
         setEditing(false);
     };
+
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setUser({ ...user, [name]: value });
     };
 
+    const handleUploadChange = (e) => {
+        const file = e.target.files[0];
+    
+        if (file) {
+            // Verificar se o arquivo é uma imagem
+            const isImage = file.type.startsWith('image/');
+            
+            if (isImage) {
+                const reader = new FileReader();
+                reader.onloadend = () => {
+                    setUser({ ...user, profilePicture: reader.result });
+                };
+                reader.readAsDataURL(file);
+            } else {
+                // Se o arquivo não for uma imagem, você pode exibir uma mensagem de erro
+                alert('Por favor, selecione uma imagem válida.');
+                // Ou limpar o campo de entrada de arquivo
+                e.target.value = '';
+            }
+        }
+    };
+    
+
     const inputAnimation = useSpring({
         opacity: isEditing ? 1 : 0,
-        transform: isEditing ? 'translateY(0)' : 'translateY(20px)',
-        delay: isEditing ? 400 : 0,
+        height: isEditing ? 'auto' : 0,
+        marginTop: isEditing ? 10 : 0,
     });
 
     return (
-        <div className={`profile-container ${isEditing ? 'editing' : ''}`}>
-            <div className="profile-picture">
-                <img src={user.profilePicture} alt="Profile" className="profileImage" />
+        <div className={`profile-container${isEditing ? 'editing' : ''}`}>
+            <div
+                className={`profile-picture ${isEditing ? 'editable' : ''}`}
+                onMouseEnter={() => setHovered(true)}
+                onMouseLeave={() => setHovered(false)}
+            >
+
+                <img
+                    src={user.profilePicture}
+                    alt="Profile"
+                    className={`profileImage ${isEditing ? 'hoverable' : ''}`}
+                    onClick={() => isEditing && document.getElementById('upload-input').click()}
+                />
+
                 <h2 className="titleProfile">
                     {isEditing ? (
                         <animated.input
@@ -103,11 +136,31 @@ const Profile = () => {
                         user.bio
                     )}
                 </p>
+                <p>
+                    {' '}
+                    {isEditing ? (
+                        <>
+                            Alterar Imagem de Perfil:
+                            <input
+                                type="file"
+                                id="upload-input"
+                                style={{}}
+                                onChange={handleUploadChange}
+                            />
+                        </>
+
+                    ) : (
+                        ''
+                    )}
+                </p>
+
                 {isEditing && (
                     <>
-                        <button onClick={handleSaveClick}>Salvar</button>
-                        <br />
-                        <button onClick={handleCancelClick}>Voltar</button>
+                        <div className='buttons-formProfile'>
+                            <button onClick={handleSaveClick}>Salvar</button>
+                            <button onClick={handleCancelClick}>Voltar</button>
+                        </div>
+
                     </>
                 )}
                 {!isEditing && <button onClick={handleEditClick}>Editar</button>}
