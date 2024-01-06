@@ -9,12 +9,10 @@
     transform: translateY(20px);
     transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
     max-height: 400px;
-    /* Adicionando altura máxima */
     overflow-y: auto;
-    /* Adicionando barra de rolagem quando necessário */
     margin-left: 0vh;
     border: 1px solid #ddd;
-    overflow-y: auto; /* Adiciona a barra de rolagem apenas quando necessário */
+    overflow-y: auto;
 }
 
 .detailed-view.open {
@@ -26,6 +24,17 @@
 .detailed-view h2 {
     color: #333;
     margin-bottom: 15px;
+}
+
+.filter-controls {
+    margin-bottom: 20px;
+}
+
+.filter-controls input {
+    margin-right: 10px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
 }
 
 .pedidos-list {
@@ -45,9 +54,7 @@
     align-items: center;
     position: relative;
     max-height: none;
-    /* Removendo altura máxima para dispositivos móveis */
     overflow-y: auto;
-    /* Adicionando barra de rolagem quando necessário */
 }
 
 .detailed-item .status-marker {
@@ -68,13 +75,6 @@
 
 .detailed-item .item-details span {
     margin-right: 15px;
-    /* Adicione o espaçamento entre os spans */
-}
-
-/* Adicione um espaçamento à esquerda para o primeiro span da categoria */
-.pedidos-list.totalPedidos .item-details span:first-child {
-    margin-left: 0;
-    /* Ou qualquer valor de espaçamento desejado */
 }
 
 .pedidos-list.pedidosPendentes .detailed-item .status-marker {
@@ -99,32 +99,47 @@
     color: #555;
 }
 
+.button-details {
+    background-color: #3498db;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.more-details {
+    margin-top: 10px;
+    color: #3498db;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.no-details {
+    color: #888;
+}
 
 /* Estilos para a barra de rolagem em navegadores WebKit (Chrome, Safari) */
-/* Largura da barra de rolagem e estilos gerais */
 ::-webkit-scrollbar {
     width: 8px;
+}
 
-  }
-  
-  /* Cor do fundo da trilha */
-  ::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
     margin-top: 1px;
     background-color: #f5f5f5;
-    border: 0.1rem solid #ccc; 
+    border: 0.1rem solid #ccc;
     border-radius: 4px;
-  }
-  /* Cor do "pulgar" (indicador de posição) */
-  ::-webkit-scrollbar-thumb {
+}
+
+::-webkit-scrollbar-thumb {
     background-color: #3498db;
     border-radius: 4px;
-  }
-  
-  /* Cor do "pulgar" ao passar o mouse sobre ele */
-  ::-webkit-scrollbar-thumb:hover {
+}
+
+::-webkit-scrollbar-thumb:hover {
     background-color: #2980b9;
-  }
-  
+}
+
 /* Adicionando estilos responsivos para dispositivos com largura menor que 767px */
 @media only screen and (max-width: 767px) {
     .detailed-view {
@@ -132,17 +147,13 @@
         border: none;
         background-color: transparent;
         max-height: none;
-        /* Removendo a altura máxima para dispositivos móveis */
         overflow-y: auto;
-        /* Adicionando barra de rolagem quando necessário para dispositivos móveis */
     }
 
     .detailed-item {
         padding: 10px;
         max-height: none;
-        /* Removendo a altura máxima para dispositivos móveis */
         overflow-y: auto;
-        /* Adicionando barra de rolagem quando necessário para dispositivos móveis */
     }
 
     .detailed-view.open {
@@ -156,5 +167,4 @@
         padding: 0.8vh;
         text-align: center;
     }
-
 }

@@ -228,12 +228,12 @@
 }
 
 @media screen and (max-width: 600px) {
-    .legenda-cores{
+    .legenda-cores {
         margin-bottom: 10vh;
         width: 45vh;
-    }
-    .legenda-cores > p{
+  
+    .legenda-cores > p {
         margin-top: 1vh;
     }
-    
+  }
 }

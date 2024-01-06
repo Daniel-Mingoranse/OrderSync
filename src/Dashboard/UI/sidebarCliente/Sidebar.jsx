@@ -7,7 +7,6 @@ const sidebarNavItems = [
   { display: 'Inicio', to: '/' },
   { display: 'Perfil', to: '/profile' },
   { display: 'Serviços', to: '/services' },
-  { display: 'Configurações', to: '/settings' },
   { display: 'Sair', to: '/logout' },
 ];
 

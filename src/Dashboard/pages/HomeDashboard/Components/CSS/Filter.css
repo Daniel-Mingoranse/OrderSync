@@ -1,0 +1,55 @@
+/* FilterComponent.css */
+
+.filter-controls {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .filter-controls input {
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border-color 0.3s ease-in-out;
+    width: 100%; /* Alteração para ocupar a largura total */
+  }
+  
+  .filter-controls input[type="date"] {
+    padding: 8px;
+  }
+  
+  .filter-controls input:focus {
+    border-color: #3498db; /* Cor do foco ao selecionar o input */
+  }
+  
+  /* Estilizando os ícones */
+  .filter-controls .icon {
+    margin-right: 5px;
+    font-size: 18px;
+    color: #555;
+  }
+  
+/* Adicionando regras de mídia para dispositivos móveis */
+@media only screen and (max-width: 600px) {
+    .filter-controls {
+      flex-direction: row; /* Empilhar os elementos verticalmente */
+      align-items: stretch; /* Esticar os itens para ocupar a largura total */
+    }
+  
+    .filter-controls input {
+      margin-right: 2%; /* Remover a margem direita */
+      margin-bottom: 10px; /* Adicionar margem inferior para separar os inputs */
+      padding: 10px; /* Ajustar o espaçamento interno */
+      width: 20vh; /* Remover a largura total para ocupar a largura disponível */
+    }
+  
+    .filter-controls .icon {
+        display: none;
+    }
+  }
+  
+  /* Restante do seu CSS permanece inalterado */
+  
+  

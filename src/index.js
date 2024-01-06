@@ -15,6 +15,7 @@ import BudgetClient from './Dashboard/pages/ClientCards/BudgetClient/BudgetClien
 import OrderClient from './Dashboard/pages/ClientCards/OrderClient/OrderClient'
 import Profile from './Dashboard/pages/Profile/profile'
 import OrderDetailsPage from './Dashboard/pages/HomeDashboard/Components/OrderDetails';
+import Logout from './Logout/Logout'
 const root = createRoot(document.getElementById('root'));
 
 root.render(
@@ -28,6 +29,7 @@ root.render(
         <Route path="/signup" element={<SignUp />} />
         <Route path="/error" element={<Error />} />
         <Route path="/" element={<App />} />
+
       </Routes>
 
       {/* Rotas do menu Dashboard no Sidebar Client */}
@@ -39,8 +41,10 @@ root.render(
           <Route path="pedidos" element={<OrderClient />} />
           <Route path="profile" element={<Profile />} />
           <Route path="orderdetails/:orderId" element={<OrderDetailsPage />} />
-
+          <Route path="logout" element={<Logout />} />
         </Route>
+
+
       </Routes>
     </Router>
   </React.StrictMode>
